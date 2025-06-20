@@ -1,0 +1,31 @@
+# --- Main Application Dependencies ---
+apscheduler         # For scheduled tasks like price drop checks (in main.py)
+CurrencyConverter   # For currency conversion in the price predictor (in timegpt.py)
+fastapi             # The core web framework
+faiss-cpu           # For similarity search in image recognition and data processing
+firebase-admin      # For sending push notifications (in main.py)
+gensim              # For Word2Vec model in data processing
+httpx               # For making async HTTP requests (in data_processing.py and timegpt.py)
+joblib              # Used by data_processing for parallel tasks
+motor               # Asynchronous driver for MongoDB
+nixtla              # For time-series price forecasting (in timegpt.py)
+numpy               # Fundamental package for numerical operations
+openai              # For accessing GPT models in the questionnaire
+opencv-python       # For image processing (cv2)
+pandas              # For data manipulation, especially in timegpt.py
+passlib[bcrypt]     # For password hashing and verification
+Pillow              # For image handling (PIL)
+playwright          # For web scraping automation
+playwright-stealth  # To make the scraper less detectable
+python-multipart    # Required by FastAPI for file uploads and form data
+pymongo             # The synchronous driver for MongoDB (used in config.py)
+requests            # For making synchronous HTTP requests (used by scraper.py for BrightData)
+scipy               # Used for statistical functions (IQR) in data processing
+torch               # The core machine learning framework for PyTorch
+torchvision         # Provides datasets and models for computer vision, used with torch
+ultralytics         # For the YOLOv8 object detection model
+uvicorn             # The web server that runs the FastAPI application
+
+# --- Optional: For Testing Only ---
+# pytest
+# pytest-asyncio

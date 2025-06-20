@@ -1,0 +1,166 @@
+{
+  "_id": "global_config",
+  "secrets": {
+    "openai_api_key": "YOUR_OPENAI_KEY",
+    "brightdata_api_key": "YOUR_BRIGHTDATA_KEY",
+    "proxy_username": "YOUR_PROXY_USER",
+    "proxy_password": "YOUR_PROXY_PASSWORD",
+    "firebase_cred_path": "path/to/firebase_service_account.json",
+    "nixtla_api_key": "YOUR_NIXTLA_KEY"
+  },
+  "scheduler": {
+    "price_check_interval_hours": 24,
+    "product_ttl_seconds": 86400
+  },
+  "database": {
+    "features_db_uri": "mongodb://localhost:27017/",
+    "app_db_name": "appDB",
+    "features_collection_name": "features",
+    "users_collection_name": "users",
+    "tokens_collection_name": "auth_tokens",
+    "sessions_collection_name": "sessions",
+    "cache_collection_name": "questionnaire_cache",
+    "products_collection_name": "products",
+    "pricespy_collection_name": "priceSpy_items_ids",
+    "historical_data_collection_name": "pricespy_historical_data",
+    "scheduled_tasks_config_collection_name": "scheduled_tasks_config_collection"
+  },
+  "paths": {
+    "yolo_model": "yolov8x-oiv7.pt",
+    "output_images": "output_images",
+    "log_file": "project_activity.log"
+  },
+  "models": {
+    "resnet_weights": "DEFAULT"
+  },
+  "image_recognition": {
+    "irrelevant_classes": [
+      "person",
+      "dog",
+      "cat",
+      "bird",
+      "horse",
+      "sheep",
+      "cow",
+      "bear",
+      "zebra",
+      "giraffe",
+      "elephant",
+      "tie",
+      "handbag",
+      "suitcase",
+      "sports ball",
+      "skis",
+      "snowboard",
+      "kite",
+      "human face",
+      "man"
+    ],
+    "match_params": {
+      "num_unique_results": 3,
+      "search_k_multiplier": 21
+    }
+  },
+  "questionnaire": {
+    "max_questions": 5,
+    "openai_question_model": "gpt-4o-mini",
+    "openai_question_temp": 0.3,
+    "openai_question_timeout": 20,
+    "openai_title_model": "gpt-4o-mini",
+    "openai_title_temp": 0.3,
+    "openai_title_timeout": 20
+  },
+  "scraper": {
+    "max_products_per_site": 20,
+    "use_proxy": false,
+    "proxy_host": "res.proxy-sale.com",
+    "proxy_ports": [
+      10000,
+      10001,
+      10002,
+      10003,
+      10004,
+      10005,
+      10006,
+      10007,
+      10008,
+      10009
+    ],
+    "brightdata_api_url": "https://api.brightdata.com/request",
+    "google_max_results": 20,
+    "navigation_retries": 3,
+    "navigation_timeout_ms": 45000,
+    "user_agents": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+    ],
+    "uule_locations": {
+      "us": "w+CAIQICINVW5pdGVkIFN0YXRlcw",
+      "uk": "w+CAIQICIGTG9uZG9u",
+      "ca": "w+CAIQICIHVG9yb250bw",
+      "de": "w+CAIQICIGQmVybGlu",
+      "fr": "w+CAIQICIFUGFyaXM",
+      "in": "w+CAIQICIGRGVsaGk",
+      "au": "w+CAIQICIHU3lkbmV5",
+      "cn": "w+CAIQICIFQmVpamluZw",
+      "jp": "w+CAIQICIGVG9reW8",
+      "jo": "w+CAIQICIGQW1tYW4",
+      "ae": "w+CAIQICIEUHVhZCBEdWJhaQ",
+      "sa": "w+CAIQICIFUml5YWRo",
+      "eg": "w+CAIQICIEQ2Fpcm8"
+    }
+  },
+  "selectors": {
+    "amazon": {
+      "product": "div.s-main-slot div[data-component-type='s-search-result']",
+      "title": "h2.a-size-base-plus.a-spacing-none.a-color-base.a-text-normal",
+      "price": "span.a-price .a-offscreen",
+      "image": "img.s-image",
+      "link": "a.a-link-normal.s-no-outline",
+      "rating": "span.a-icon-alt",
+      "reviews": "span.a-size-base.s-underline-text",
+      "shipping": "span.s-align-children-center"
+    },
+    "ebay": {
+      "product": "li.s-item",
+      "title": "div.s-item__title",
+      "price": "span.s-item__price",
+      "image": "div.s-item__image-wrapper img",
+      "link": "a.s-item__link",
+      "rating": "div.x-star-rating span.clipped",
+      "reviews": "span.s-item__reviews-count",
+      "shipping": "span.s-item__shipping"
+    },
+    "opensooq": {
+      "product": "a.postListItemData",
+      "title": "h2.breakWord.trimTwoLines",
+      "price": "div.priceColor",
+      "image": "div.postImgCont img",
+      "link": "self",
+      "shipping": "div.darkGrayColor"
+    }
+  },
+  "data_processing": {
+    "price_conversion": {
+      "aed_to_usd": 0.27,
+      "jod_to_usd": 1.41
+    },
+    "word2vec": {
+      "vector_size": 1024,
+      "window": 3,
+      "min_count": 1,
+      "workers": -1
+    },
+    "relevance_filtering": {
+      "max_results": 8
+    },
+    "iqr_anomaly": {
+      "multiplier": 1
+    }
+  },
+  "logging": {
+    "level": "INFO"
+  },
+  "last_updated": null
+}

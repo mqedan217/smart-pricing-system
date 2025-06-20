@@ -1,0 +1,24 @@
+# Secrets: never commit
+global_config.json
+firebase_secrer_key.json
+*secret*.json
+.env
+
+# Environment and caches
+venv/
+__pycache__/
+*.pyc
+.idea/
+
+# Large model weights (downloaded by ultralytics on first run)
+*.pt
+
+# Runtime output
+*.log
+output_images/
+
+# Flutter build output
+build/
+
+# Course documents
+*.pptx
